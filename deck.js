@@ -14,10 +14,18 @@ import Cards from "./card.js"
          })
         }
 
+
     export default class Deck {
-        constructor (cards = fullDeck()) {
+        constructor (cards = fullDeck()) {  
             this.cards= cards
         }
+
+        get everyCard() { // this will get all 52 card for th for loop
+            return  this.cards.length  //use in  for loop to target every card 
+        }
+        for (let i = this.everyCard; i > 0; i --) {
+             index   =math.floor(math.random) * ( i +1 ) // math.floor(math.random) wil generate a random integer during the for-loop                                       //consider maath.random & math.floor then describe
+        }                                                // this will create a new index of random integers or in this case cards 
     } 
     
 
