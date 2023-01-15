@@ -14,6 +14,7 @@ import Deck from "./deck.js";
 
 
 const getDeck = new Deck()
+getDeck.shuffleCards()
 console.log(getDeck.cards);
 
 

@@ -25,9 +25,9 @@ import Cards from "./card.js"
         }
         shuffleCards() {
         for (let i = this.everyCard; i > 0; i--) {
-             index = math.floor(math.random() * ( i +1 )) // math.floor(math.random) wil generate a random integer during the for-loop                                       //consider maath.random & math.floor then describe
+             const newIndex = Math.floor(Math.random() * ( i +1 )) // math.floor(math.random) wil generate a random integer during the for-loop                                       //consider maath.random & math.floor then describe
              const prevValue = this.cards[newIndex]
-             this.cards[index] = this.cards[i]
+             this.cards[newIndex] = this.cards[i]
              this.cards[i] = prevValue
         
         
