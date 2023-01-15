@@ -75,6 +75,15 @@
     font-size: 3rem;
     border-radius: .5rem;
   }
+
+  #card-black {
+    color: black;
+  }
+
+  #card-red{
+    color: red;
+  }
+
   
  
   .player1-card-slot::before {
@@ -88,6 +97,7 @@
   }
 
   .player2-card-slot::before {
+    color: red;
     position: relative;
     content: attr(data-value);
     font-size: 2rem;
@@ -95,4 +105,7 @@
     top: 2rem;
     bottom: 2rem
     
+    
   }
+
+  
