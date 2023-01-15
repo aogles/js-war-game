@@ -8,15 +8,19 @@ export default class Cards {
     }   
     
     get color() {
-        return this.suit === "♣" || this.suit === "♥" ? "black" : "red"
+        return this.suit === "♣" || this.value === "" ? "black": "red"
+        //return this.value === "♣" || this.suit === "♥" ? "red" : "black"
       }
-
+ 
 
  getHTML() {
-    const cardId = document.createElement("ID")
-    cardId.innerText = this.suit
-    cardId.classList.add("card", this.color)
-    cardId.dataset.value = `${this.value} ${this.suit}`
+    const cardDiv = document.createElement('div')
+    cardDiv.innerText = this.suit
+    cardDiv.innerText = this.value
+    cardDiv.classList.add("player2-card-slot", this.color)
+    //cardDiv.document.getElementById.add("card-red","card-black")
+    cardDiv.dataset.value = `${this.value} ${this.suit}`
+    
     return cardDiv
   }
 

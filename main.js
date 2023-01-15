@@ -12,10 +12,18 @@ export default greeting; */
 import Deck from "./deck.js";
 //import cards from "./card.js";
 
+const redCard = document.getElementById("card-red")
+const blackCard = document.getElementsByClassName("card-black")
+const player2 = document.getElementsByClassName("player2-card-slot")
+const player1 = document.getElementsByClassName("player1-card-slot")
+
+
 
 const getDeck = new Deck()
 getDeck.shuffleCards()
 console.log(getDeck.cards);
+
+redCard.appendChild(getDeck.cards[0].getHTML())
 
 
 
