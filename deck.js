@@ -5,15 +5,22 @@ const values= [ "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"
 
 import Cards from "./card.js"
    
-    function fullDeck(){
+    function  fullDeck () {
         return suits.flatMap(suit => {   // will loop through and condenses arrays, helpful when you have an array within an array
         return  values.map(value => {
         return new Cards(suit, value)
            
           })
          })
+        } 
+/*
+        for (let i = 0; i < suits.length; i++) {
+            for (let x = 0; x < values.length; x++) {
+                let card = { Value: values[x], Suit: suits[i] };
+                fullDeck.push(card);
+            }
         }
-
+*/
 
     export default class Deck {
         constructor (cards = fullDeck()) {  
@@ -25,7 +32,7 @@ import Cards from "./card.js"
         }
         shuffleCards() {
         for (let i = this.everyCard; i > 0; i--) {
-             const newIndex = Math.floor(Math.random() * ( i +1 )) // math.floor(math.random) wil generate a random integer during the for-loop                                       //consider maath.random & math.floor then describe
+             const newIndex = Math.floor(Math.random() * ( i - 1 )) // math.floor(math.random) wil generate a random integer during the for-loop                                       //consider maath.random & math.floor then describe
              const prevValue = this.cards[newIndex]
              this.cards[newIndex] = this.cards[i]
              this.cards[i] = prevValue

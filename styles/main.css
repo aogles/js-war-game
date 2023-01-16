@@ -31,7 +31,6 @@
     align-items: left;
     font-size: 1rem;
     border-radius: .5rem;
-    color: black;
     user-select: none;
   }
 
@@ -46,9 +45,11 @@
     align-items: left;
     font-size: 1rem;
     border-radius: .5rem;
-    color: black;
     user-select: none;
   }
+
+  
+
   
   .player2-deck {
     background-color: rgb(66, 19, 75);
@@ -76,12 +77,13 @@
     border-radius: .5rem;
   }
 
-  #card-black {
+  .card-slot{
     color: black;
   }
 
-  #card-red{
+  .card-slot{
     color: red;
+    
   }
 
   
@@ -97,7 +99,6 @@
   }
 
   .player2-card-slot::before {
-    color: red;
     position: relative;
     content: attr(data-value);
     font-size: 2rem;
@@ -106,6 +107,9 @@
     bottom: 2rem
     
     
+  }
+  .player2-card-slot::after{
+    transform:  180;
   }
 
   
