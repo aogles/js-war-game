@@ -1,3 +1,5 @@
+
+
 *, *::after, *::before { 
     box-sizing: border-box;
   }
@@ -111,5 +113,3 @@
   .player2-card-slot::after{
     transform:  180;
   }
-
-  
