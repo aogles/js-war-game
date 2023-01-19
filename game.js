@@ -1,8 +1,9 @@
 import  Cards from "./card.js"
 import  Deck from "./deck.js"
+
 import  Player from "./player.js"
 
-const CARD_VALUE_MAP = {
+/*const CARD_VALUE_MAP = {
     "2": 2,
     "3": 3,
     "4": 4,
@@ -16,28 +17,32 @@ const CARD_VALUE_MAP = {
     Q: 12,
     K: 13,
     A: 14
-  }
+  } */
 
-
-export default class Game {                 //will always call this with new Game
-    
-    function(){
-    this.player1 = new Player({
+///////////Game constructor with players and play names//////
+  export default class Game {   
+                //will always call this with new Game
+  constructor(player1,player2){
+     this.player1 = new Player({
         name: "Player1",
     })
 
     this.player2 = new Player({
         name: "Player2",
     })
-}
-}
+};
+
+  }
+
+
+import  Player from "./player.js"
 /////////shuffle the cards function////////
 Game.prototype.shuffle = function(deck){
-                                           // this will get all 52 card for th for loop
+                           let i=deck.length                // this will get all 52 card for th for loop
         return  this.cards.length  //use in  for loop to target every card 
     }
   
-    for (let i = this.everyCard; i > 0; i--) {
+    for (let i = this.fullDeck; i > 0; i--) {
          const newIndex = Math.floor(Math.random() * ( i - 1 )) // math.floor(math.random) wil generate a random integer during the for-loop                                       //consider maath.random & math.floor then describe
          const prevValue = this.cards[newIndex]
          this.cards[newIndex] = this.cards[i]
@@ -51,15 +56,14 @@ Game.prototype.shuffle = function(deck){
 
 Game.prototype.deal = function(){
     //add start button to fire this function
-this.player1.hand = this.deck.cards.filter(item,index) {
-   return !(index %2) //filter akes in function will loop through csrds array and passes to function
-};
-this.player2.hand = this.deck.cards.filter(item,index) {
+this.player1.hand = this.deck.cards.filter(function(item,index); {
+   return !(index %2) //filter takes in function will loop through csrds array and passes to function
+});
+this.player2.hand = this.deck.cards.filter(function(item,index); {
     return (index %2) //filter akes in function will loop through csrds array and passes to function
- 
-};                    //% give you the remainder
-
-};
+              });              //% give you the remainder
+            
+};   
 
 //////////////////compare the cards function/////////
 
@@ -99,3 +103,6 @@ this.compare();
 
         const game = new Game();
         game.play
+
+        
+        /////////bu
