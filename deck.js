@@ -1,25 +1,24 @@
+import Card from "./card.js"
 
 const suits= ["♠", "♣", "♥", "♦"]
 const values= [ "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
 
 
-import Cards from "./card.js"
 /////////////////////Create deck of cards////////   
     function  fullDeck () {
-        return suits.flatMap(suit => {   // will loop through and condenses arrays, helpful when you have an array within an array
-        return  values.map(value => {
-        return new Cards(suit, value)
-           
-          })
-         })
+        return suits.flatMap(suit => values.map(value => new Card({suit, value})))
+        // return suits.flatMap(suit => {   // will loop through and condenses arrays, helpful when you have an array within an array
+        // return  values.map(value => {
+        // return new Card({suit, value})
+        //   })
+        //  })
         } 
 
-    export default class Deck {
-        constructor (cards = fullDeck()) {  
-            this.cards= cards
-        }
-    }
-/* 
+    export default function Deck(){
+        this.cards = fullDeck()
+        };
+    
+/*
         get everyCard() { // this will get all 52 card for th for loop
             return  this.cards.length  //use in  for loop to target every card 
         }
