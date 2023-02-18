@@ -1,115 +1,148 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
 
+body {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 4rem);
+  grid-template-rows: 7rem 4rem 7rem;
+  gap: 0.5rem;
+  cursor: pointer;
+  justify-content: center;
+  padding-top: 2rem;
+}
 
-*, *::after, *::before { 
-    box-sizing: border-box;
-  }
-  
-  body {
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(2, 4rem);
-    grid-template-rows: 7rem 4rem 7rem;
-    gap: .5rem;
-    cursor: pointer;
-    justify-content: center;
-    padding-top: 2rem;
-  }
+.text {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .text {
-    grid-column: span 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .player2-card-slot {
-    height: 100%;
-    width: 100%;
-    border: 1px solid black;
-    display: flex;
-    justify-content: center;
-    top: .5rem;
-    bottom: .1rem;
-    align-items: left;
-    font-size: 1rem;
-    border-radius: .5rem;
-    user-select: none;
-  }
+.player2-card-slot {
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  top: 0.5rem;
+  bottom: 0.1rem;
+  align-items: left;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  user-select: none;
+}
 
-  .player1-card-slot {
-    height: 100%;
-    width: 100%;
-    border: 1px solid black;
-    display: flex;
-    justify-content: center;
-    top: .3rem;
-    bottom: .1rem;
-    align-items: left;
-    font-size: 1rem;
-    border-radius: .5rem;
-    user-select: none;
-  }
+.player1-card-slot {
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  top: 0.3rem;
+  bottom: 0.1rem;
+  align-items: left;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  user-select: none;
+}
 
-  
+.player2-deck {
+  background-color: rgb(66, 19, 75);
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  border-radius: 0.5rem;
+}
 
-  
-  .player2-deck {
-    background-color: rgb(66, 19, 75);
-    height: 100%;
-    width: 100%;
-    border: 1px solid black;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3rem;
-    border-radius: .5rem;
-  }
-  
-  .player1-deck {
-    background-color: rgb(214, 53, 193);
-    height: 100%;
-    width: 100%;
-    border: 1px solid black;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3rem;
-    border-radius: .5rem;
-  }
+.player1-deck {
+  background-color: rgb(214, 53, 193);
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  border-radius: 0.5rem;
+}
 
-  .card-slot{
-    color: black;
-  }
+.card-slot {
+  color: black;
+}
 
-  .card-slot{
-    color: red;
-    
-  }
+.card-slot {
+  color: red;
+}
 
-  
- 
-  .player1-card-slot::before {
-    position: relative;
-    content: attr(data-value);
-    font-size: 2rem;
-    display: center;
-    top: 2rem;
-    bottom: 2rem
-    
-  }
+.player1-card-slot::before {
+  position: relative;
+  content: attr(data-value);
+  font-size: 2rem;
+  display: center;
+  top: 2rem;
+  bottom: 2rem;
+}
 
-  .player2-card-slot::before {
-    position: relative;
-    content: attr(data-value);
-    font-size: 2rem;
-    display: center;
-    top: 2rem;
-    bottom: 2rem
-    
-    
-  }
-  .player2-card-slot::after{
-    transform:  180;
-  }
+.player2-card-slot::before {
+  position: relative;
+  content: attr(data-value);
+  font-size: 2rem;
+  display: center;
+  top: 2rem;
+  bottom: 2rem;
+}
+.player2-card-slot::after {
+  transform: 180;
+}
+
+.player1 {
+  position: relative;
+  height: 150px;
+  width: 80px;
+  border: solid red 2px;
+  left: 100px;
+  top: -110px;
+  border-radius: 0.5rem;
+  font-size: 30px;
+  text-align: center;
+  color: red;
+}
+
+.player2 {
+  position: relative;
+  height: 150px;
+  width: 80px;
+  border: solid rgb(7, 6, 6) 2px;
+  left: 100px;
+  top: -110px;
+  border-radius: 0.5rem;
+  font-size: 30px;
+  text-align: center;
+}
+
+.title {
+  position: relative;
+  font-size: 50px;
+  text-align: center;
+  left: -200px;
+  top: -50px;
+}
+
+.start-button,
+.play-button {
+  position: relative;
+  width: 100px;
+  height: 40px;
+  border: solid black 2px;
+  margin-top: 10px;
+}

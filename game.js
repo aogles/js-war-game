@@ -44,6 +44,21 @@ export default function Game({ player1, player2 }) {
 
   ////// Compare Cards //////
   Game.prototype.compare = function () {
+    document.getElementById("player1-count").innerHTML =
+      this.player1.hand.length;
+    document.getElementById("player2-count").innerHTML =
+      this.player2.hand.length;
+    console.log(this.player1.hand[0]);
+    document.getElementById("player1-card").innerHTML = [
+      this.player1.hand[0].suit,
+      this.player1.hand[0].value,
+    ];
+
+    document.getElementById("player2-card").innerHTML = [
+      this.player2.hand[0].suit,
+      this.player2.hand[0].value,
+    ];
+
     if (this.player1.hand === 0) {
       alert("You ran out of cards, you lose! refresh to play again.");
     }

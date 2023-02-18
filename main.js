@@ -33,6 +33,9 @@ startGame.addEventListener("click", beginGame);
 const dealAgain = document.getElementById("play-button");
 dealAgain.addEventListener("click", keepPlaying);
 
+// function log() {
+
+// }
+
 //empty pot after each round
 //check transfer of war card and where splice/slice is happening
-//
