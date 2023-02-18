@@ -44,7 +44,12 @@ export default function Game({ player1, player2 }) {
 
   ////// Compare Cards //////
   Game.prototype.compare = function () {
-    if (this.depo[0].value > this.depo[1].value) {
+    if (this.player1.hand === 0) {
+      alert("You ran out of cards, you lose! refresh to play again.");
+    }
+    if (this.player2.hand === 0) {
+      alert("Computer ran out of cards, You win! Refresh page to play again.");
+    } else if (this.depo[0].value > this.depo[1].value) {
       this.player1.hand = [...this.player1.hand, ...this.depo];
       //this.player2.hand = [this.player2.hand];
       //this.depo = [];
@@ -85,7 +90,15 @@ export default function Game({ player1, player2 }) {
     let player2WarCard = player2WarCards[2].value;
     this.depo = [...this.depo, ...player1WarCards, ...player2WarCards];
 
-    if (player1WarCard > player2WarCard) {
+    if (this.player1.hand < 5) {
+      alert(
+        "You dont have enough cards to play war, you lose! refresh the page to play again."
+      );
+    } else if (this.player2.hand < 5) {
+      alert(
+        "Computer does not have enough cards to play war, You win! refresh the page to play again."
+      );
+    } else if (player1WarCard > player2WarCard) {
       console.log(this.depo);
       this.player1.hand = [
         ...this.player1.hand,
