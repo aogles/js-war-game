@@ -46,14 +46,14 @@ Game.prototype.draw = function () {
 ////// Compare Cards //////
 Game.prototype.compare = function () {
   if (this.depo[0].value > this.depo[1].value) {
-    this.player1.hand = [...this.depo];
+    this.player1.hand = [...this.player1.hand, ...this.depo];
     //this.player2.hand = [this.player2.hand];
     //this.depo = [];
     console.log("player1 wins round");
     console.log(this.player1.hand.length);
     // console.log(this.depo)
   } else if (this.depo[1].value > this.depo[0].value) {
-    this.player2.hand = [...this.depo];
+    this.player2.hand = [...this.player2.hand, ...this.depo];
     //this.player1.hand = [this.player1.hand];
     //this.depo = [];
     console.log("player2 wins round");
@@ -74,7 +74,7 @@ function war(player1, player2) {
   const player1WarCards = player1.hand.splice(0, 3);
   const player2WarCards = player2.hand.splice(0, 3);
 
-  return compareWar(player1WarCards, player2WarCards);
+  compareWar(player1WarCards, player2WarCards);
 }
 
 function compareWar(player1WarCards, player2WarCards) {
@@ -83,13 +83,15 @@ function compareWar(player1WarCards, player2WarCards) {
   // console.log(player2WarCards[2]);
   let player1WarCard = player1WarCards[2].value;
   let player2WarCard = player2WarCards[2].value;
-  this.warDepo = [player1WarCard, player2WarCard];
+  this.depo = [...this.depo, player1WarCards, player2WarCards];
 
   if (player1WarCard > player2WarCard) {
-    player1.hand = [...this.warDepo];
+    console.log(this.depo);
+    this.player1.hand = [...this.depo, this.player1.hand];
     console.log("Player1 Wins");
-  } else if (player2WarCard > player1WarCards) {
-    player2.hand = [...this.warDepo];
-    console.log("player2 wins");
+  } else if (player2WarCard > player1WarCard) {
+    console.log(this.depo);
+    this.player2.hand = [...this.depo, this.player2.hand];
+    console.log("player2 Wins");
   }
 }
