@@ -1,10 +1,11 @@
+import Deck from "./deck.js";
 import Game from "./game.js";
 
 // let player1 = prompt('Player1 enter your name');
 // let player2 = prompt('Player2 enter your name');
 
 let player1 = "Eric";
-let player2 = "Amber";
+let player2 = "amber";
 
 const game = new Game({ player1, player2 });
 
@@ -14,6 +15,9 @@ const game = new Game({ player1, player2 });
 //console.log(game.depo);
 
 const beginGame = () => {
+  alert(
+    "Welcome! Lets play war, high card wins. You are the red deck Good luck!"
+  );
   console.log("beginGame");
   game.shuffle();
   game.deal();

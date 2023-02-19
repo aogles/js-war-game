@@ -44,11 +44,7 @@ export default function Game({ player1, player2 }) {
 
   ////// Compare Cards //////
   Game.prototype.compare = function () {
-    document.getElementById("player1-count").innerHTML =
-      this.player1.hand.length;
-    document.getElementById("player2-count").innerHTML =
-      this.player2.hand.length;
-    console.log(this.player1.hand[0]);
+    //console.log(this.player1.hand[0]);
     document.getElementById("player1-card").innerHTML = [
       this.player1.hand[0].suit,
       this.player1.hand[0].value,
@@ -76,8 +72,8 @@ export default function Game({ player1, player2 }) {
       //this.player1.hand = [this.player1.hand];
       //this.depo = [];
       console.log("player2 wins round");
-      console.log(this.player2.hand.length);
-      //console.log(this.depo);
+      //console.log(this.player2.hand.length);
+      console.log(this.depo);
     } else {
       console.log("This means war!");
       this.war(this.player1, this.player2);
@@ -85,7 +81,11 @@ export default function Game({ player1, player2 }) {
         ...this.player1.hand.splice(0, 3),
         ...this.player2.hand.splice(0, 3),
       ];
-    } //this is the draw 3 for war and adding to the pot
+    }
+    document.getElementById("player1-count").innerHTML =
+      this.player1.hand.length;
+    document.getElementById("player2-count").innerHTML =
+      this.player2.hand.length; //this is the draw 3 for war and adding to the pot
   };
 
   Game.prototype.war = function (player1, player2) {
@@ -105,11 +105,11 @@ export default function Game({ player1, player2 }) {
     let player2WarCard = player2WarCards[2].value;
     this.depo = [...this.depo, ...player1WarCards, ...player2WarCards];
 
-    if (this.player1.hand < 5) {
+    if (this.player1.hand <= 4) {
       alert(
         "You dont have enough cards to play war, you lose! refresh the page to play again."
       );
-    } else if (this.player2.hand < 5) {
+    } else if (this.player2.hand <= 4) {
       alert(
         "Computer does not have enough cards to play war, You win! refresh the page to play again."
       );
